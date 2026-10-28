@@ -18,9 +18,11 @@ It's plain HTML and CSS plus about 15 lines of JS. There's no build step, no ext
 Prices and copy were taken from the live funnels on Oct 28, 2026. Product images were downloaded from the brand's own storage (`aminoessentials.life/manus-storage/...`), resized to 640px and converted to WebP. The Brooke images are frames from her own videos.
 
 ## Links and tracking
-- Every brand Buy button goes to the matching **funnel page** (not to product pages or the homepage):
-  `https://aminoessentials.life/<funnel>?utm_source=brooke&utm_medium=social&utm_campaign=<face|hair|body|links>&utm_content=<product-slug>`
-- The links go to funnel pages on purpose. The brand's `/product/<slug>` pages show a "researcher verification" gate, "not for human consumption" text and research-peptide navigation, so this site doesn't link to them.
+- Every brand Buy button goes straight to that product's page on the brand's cosmetic "Topical Care" storefront, and bundles go to their bundle product page:
+  `https://aminoessentials.life/product/<slug>?utm_source=brooke&utm_medium=social&utm_campaign=<face|hair|body|links>&utm_content=<slug or linkinbio-*>`
+- The storefront's collection page is `https://aminoessentials.life/copper-care-funnel`. It isn't linked from the site yet.
+- On Oct 28, 2026 every linked product page was checked in headless Chrome. None showed the researcher gate or research/"not for human consumption" text, the menu was Collection / Face / Hair / Body / Bag only, and Add to Cart worked.
+- **Known issue on the brand side:** the `/cart` page still uses the old research layout (Metabolic, Performance, Recovery and SARMs menu, plus a "laboratory research use only… not for human consumption" footer). An empty `/cart` also shows the Researcher Verification gate. The care funnels' "Browse current catalog" button goes to `/catalog`, which is research-only. This site never links to `/cart`, `/catalog` or the funnels.
 - The Amazon link is used exactly as provided. All outbound shop links use `rel="sponsored noopener"`.
 
 ## Before going live
